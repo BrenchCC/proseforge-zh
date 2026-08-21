@@ -94,7 +94,7 @@ ProseForge ZH 是在通用中文去 AI 味 skill 基础上改造出来的 AI 领
 从 GitHub 克隆到 Codex skills 目录:
 
 ```bash
-git clone https://github.com/zyp-up/proseforge-zh.git ~/.codex/skills/proseforge-zh
+git clone https://github.com/BrenchCC/proseforge-zh.git ~/.codex/skills/proseforge-zh
 ```
 
 如果你已经在本地修改了仓库,可以同步当前版本:
@@ -111,7 +111,7 @@ cp SKILL.md README.md LICENSE ~/.codex/skills/proseforge-zh/
 如果你使用 Claude Code 的 skills 目录,可以克隆到:
 
 ```bash
-git clone https://github.com/zyp-up/proseforge-zh.git ~/.claude/skills/proseforge-zh
+git clone https://github.com/BrenchCC/proseforge-zh.git ~/.claude/skills/proseforge-zh
 ```
 
 也可以使用原通用 skill 类似的手动安装方式:下载本项目后,将整个目录复制到 Claude Code 的 skills 目录,确保其中包含 `SKILL.md`。
@@ -121,7 +121,7 @@ git clone https://github.com/zyp-up/proseforge-zh.git ~/.claude/skills/proseforg
 如果你的工具支持从 GitHub 仓库直接安装 skill,使用:
 
 ```text
-https://github.com/zyp-up/proseforge-zh
+https://github.com/BrenchCC/proseforge-zh
 ```
 
 ## 使用方式
@@ -171,24 +171,24 @@ https://github.com/zyp-up/proseforge-zh
 
 **改写后:**
 
-```md
+````md
 计算过程分三步:
 
 1. 沿最后一维切分特征:
 
-$$
+```math
 X_{height} = X[\ldots, 0 : D/2], \quad
 X_{width} = X[\ldots, D/2 : D]
-$$
+```
 
 2. 分别对两个子空间施加 1D-RoPE。
 
 3. 将两个结果拼回 hidden dimension:
 
-$$
+```math
 X_{out} = \text{Concat}(X'_{height}, X'_{width}, \text{dim}=-1)
-$$
 ```
+````
 
 ### 示例 3: 删除刻意英文翻译
 
@@ -253,7 +253,7 @@ $$
 
 ## 开源说明
 
-本项目改造自通用中文去 AI 味仓库 [op7418/humanizer-zh](https://github.com/op7418/humanizer-zh),并面向 AI 技术博客场景重新设计示例、规则和质量标准。项目远程仓库为 [zyp-up/proseforge-zh](https://github.com/zyp-up/proseforge-zh)。
+本项目改造自通用中文去 AI 味仓库 [op7418/humanizer-zh](https://github.com/op7418/humanizer-zh),并面向 AI 技术博客场景重新设计示例、规则和质量标准。项目远程仓库为 [BrenchCC/proseforge-zh](https://github.com/BrenchCC/proseforge-zh)。
 
 参考来源:
 
